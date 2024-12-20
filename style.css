@@ -115,7 +115,9 @@ footer {
 /* Navigation Bar */
 .navbar {
     background-color: #111;
-    padding: 10px 0;
+    padding: 10px 15px;
+    position: relative;
+    z-index: 100;
 }
 
 .nav {
@@ -143,3 +145,35 @@ footer {
     background-color: #555;
 }
 
+/* Mobile Menu */
+.menu-icon {
+    display: none;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        display: none; /* Hidden by default */
+        background-color: #111;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav li {
+        margin: 0;
+    }
+
+    .nav.active {
+        display: flex; /* Show when active */
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
